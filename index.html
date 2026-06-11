@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>점검 중 · Polymorph</title>
+  <meta name="robots" content="noindex" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <main class="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center">
+    <div class="max-w-md w-full">
+      <div class="text-6xl mb-6" aria-hidden="true">🛠️</div>
+      <h1 id="title" class="text-2xl font-bold text-gray-900 mb-3">폴리모프 서비스 점검 중</h1>
+      <p class="text-sm text-gray-600 leading-relaxed mb-8">
+        더 나은 서비스를 위해 잠시 점검을 진행하고 있습니다.<br />
+        이용에 불편을 드려 죄송합니다.
+      </p>
+      <div class="text-xs text-gray-400">
+        문의: <span class="font-mono">rootbeer.guy@axzcorp.com</span>
+      </div>
+    </div>
+  </main>
+  <script>
+    const APP_NAMES = {
+      'jibsayo.polymorph.co.kr': '집사요',
+      'autto.polymorph.co.kr': 'Autto',
+      'rootbeer-employee-mall.polymorph.co.kr': '임직원몰',
+      'oauth.polymorph.co.kr': 'Polymorph 통합 인증',
+      'bookmark-share.polymorph.co.kr': '북마크 공유',
+      'okra.polymorph.co.kr': 'Okra',
+      'collab.polymorph.co.kr': 'Collab',
+      'donghaeng.polymorph.co.kr': '동행',
+      'polymorph.co.kr': 'Polymorph',
+      'www.polymorph.co.kr': 'Polymorph',
+    };
+    const host = location.host.toLowerCase().split(':')[0];
+    const name = APP_NAMES[host] ?? '폴리모프 서비스';
+    document.getElementById('title').textContent = `${name} 점검 중`;
+    document.title = `${name} 점검 중 · Polymorph`;
+  </script>
+</body>
+</html>
